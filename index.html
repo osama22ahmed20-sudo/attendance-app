@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1976d2"><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css">
+<title>الحضور والانصراف</title></head><body>
+<header><h1>📋 الحضور والانصراف</h1><p id="today"></p></header>
+<main>
+<section class="card"><h2>تسجيل حركة</h2>
+<input id="code" placeholder="كود الموظف"><input id="name" placeholder="اسم الموظف">
+<div class="row"><button onclick="save('حضور')">🟢 تسجيل حضور</button><button onclick="save('انصراف')">🔴 تسجيل انصراف</button></div>
+</section>
+<section class="card"><h2>حضور اليوم</h2><input id="search" placeholder="بحث بالاسم أو الكود" oninput="render()"><div id="list"></div></section>
+</main>
+<div id="toast"></div><script src="app.js"></script></body></html>
