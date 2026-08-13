@@ -1,13 +1,1 @@
-<!doctype html>
-<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#1976d2"><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css">
-<title>الحضور والانصراف</title></head><body>
-<header><h1>📋 الحضور والانصراف</h1><p id="today"></p></header>
-<main>
-<section class="card"><h2>تسجيل حركة</h2>
-<input id="code" placeholder="كود الموظف"><input id="name" placeholder="اسم الموظف">
-<div class="row"><button onclick="save('حضور')">🟢 تسجيل حضور</button><button onclick="save('انصراف')">🔴 تسجيل انصراف</button></div>
-</section>
-<section class="card"><h2>حضور اليوم</h2><input id="search" placeholder="بحث بالاسم أو الكود" oninput="render()"><div id="list"></div></section>
-</main>
-<div id="toast"></div><script src="app.js"></script></body></html>
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#1976d2"><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css"><title>الحضور والانصراف</title></head><body><header><h1>📋 الحضور والانصراف</h1><p id="today"></p></header><main><section class="card"><h2>تسجيل حركة</h2><div class="grid"><label>كود الموظف<input id="code" inputmode="numeric" autocomplete="off" placeholder="مثال: 1001"></label><label>اسم الموظف<input id="name" autocomplete="off" placeholder="اسم الموظف"></label></div><div class="row"><button class="success" onclick="save('حضور')">🟢 تسجيل حضور</button><button class="danger" onclick="save('انصراف')">🔴 تسجيل انصراف</button></div></section><section class="stats"><div class="stat"><b id="count">0</b><span>المسجلون</span></div><div class="stat"><b id="present">0</b><span>حضور</span></div><div class="stat"><b id="complete">0</b><span>حضور وانصراف</span></div></section><section class="card"><div class="section-head"><h2>سجل اليوم</h2><button class="secondary small" onclick="exportCSV()">⬇️ تصدير CSV</button></div><input id="search" placeholder="🔎 بحث بالاسم أو الكود" oninput="render()" autocomplete="off"><div class="filters"><button id="allBtn" class="filter active" onclick="setFilter('all')">الكل</button><button id="inBtn" class="filter" onclick="setFilter('in')">حاضر</button><button id="outBtn" class="filter" onclick="setFilter('complete')">منصرف</button></div><div id="list"></div></section><section class="card"><h2>إدارة البيانات</h2><div class="row"><button class="secondary" onclick="backup()">💾 نسخة احتياطية</button><button class="secondary" onclick="restore()">📥 استرجاع نسخة</button></div><div class="row"><button class="danger" onclick="clearToday()">🗑️ مسح سجلات اليوم</button></div><input id="file" type="file" accept=".json,application/json" hidden onchange="doRestore(event)"></section></main><div id="toast" role="status"></div><script src="app.js"></script></body></html>
